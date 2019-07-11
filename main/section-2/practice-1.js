@@ -1,5 +1,8 @@
 'use strict';
 
 module.exports = function countSameElements(collection) {
-  return '实现练习要求，并改写该行代码。';
+  const uniqueCollection = new Set(collection);
+  return Array.from(uniqueCollection).map(value => {
+    return {key: value, count: collection.filter(x => x === value).length}
+  })
 }
